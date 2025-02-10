@@ -43,13 +43,15 @@ export const projects: Project[] = [
 
 export const skills: Skill[] = [
   // Languages
+  { name: 'C', icon: 'code', category: 'language' },
+  { name: 'Java', icon: 'code', category: 'language' },
   { name: 'Python', icon: 'code', category: 'language' },
+  { name: 'PHP', icon: 'code', category: 'language' },
+  { name: 'Go', icon: 'code', category: 'language' },
   { name: 'JavaScript', icon: 'code', category: 'language' },
   { name: 'TypeScript', icon: 'code', category: 'language' },
-  { name: 'Go', icon: 'code', category: 'language' },
   { name: 'HTML', icon: 'code', category: 'language' },
   { name: 'CSS', icon: 'code', category: 'language' },
-  { name: 'PHP', icon: 'code', category: 'language' },
   { name: 'MySQL', icon: 'code', category: 'language' },
   // Frameworks
   { name: 'React', icon: 'component', category: 'framework' },
