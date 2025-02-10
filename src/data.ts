@@ -98,7 +98,7 @@ export const timelineEvents: TimelineEvent[] = [
     year: '2024.December',
     title: 'Progate Hackathon by AWS 入賞',
     description: 'ハッカソン初参加。AI搭載IoTデバイスを開発し企業賞を受賞',
-    image: 'https://media.connpass.com/thumbs/60/13/6013b22085b758ad96d21dd37f31870c.png',
+    image: 'https://media.connpass.com/thumbs/89/30/893061def50d6db3b0b799171d78e678.png',
     links: [
       {
         url: 'https://topaz.dev/projects/d07aaceab7659b8beb47',
