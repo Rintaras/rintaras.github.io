@@ -49,18 +49,24 @@ export const skills: Skill[] = [
   { name: 'Go', icon: 'code', category: 'language' },
   { name: 'HTML', icon: 'code', category: 'language' },
   { name: 'CSS', icon: 'code', category: 'language' },
-
+  { name: 'PHP', icon: 'code', category: 'language' },
+  { name: 'MySQL', icon: 'code', category: 'language' },
   // Frameworks
   { name: 'React', icon: 'component', category: 'framework' },
   { name: 'FastAPI', icon: 'server', category: 'framework' },
+  { name: 'Next.js', icon: 'server', category: 'framework' },
   { name: 'Three.js', icon: 'component', category: 'framework' },
   { name: 'Tailwind CSS', icon: 'component', category: 'framework' },
+  { name: 'Django', icon: 'component', category: 'framework' },
+  { name: 'Echo', icon: 'component', category: 'framework' },
+
 
   // Tools
   { name: 'AWS', icon: 'cloud', category: 'tool' },
   { name: 'Docker', icon: 'container', category: 'tool' },
   { name: 'Git', icon: 'code', category: 'tool' },
-  { name: 'RasberryPi', icon: 'server', category: 'tool' }
+  { name: 'RasberryPi', icon: 'server', category: 'tool' },
+  { name: 'SupaBase', icon: 'code', category: 'tool' }
 ];
 
 export const timelineEvents: TimelineEvent[] = [
