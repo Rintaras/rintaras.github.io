@@ -123,5 +123,17 @@ export const timelineEvents: TimelineEvent[] = [
     title: '学内コンテスト 最優秀賞受賞',
     description: '大学内ソフトウェアコンテストにて「TripMate」を開発し最優秀賞を受賞',
     image: 'https://zqkoofqnnzmsurdeugnt.supabase.co/storage/v1/object/public/profile-images/profile/TripMate.png'
-  }
+  },
+  {
+    year: '2024.March',
+    title: 'Progate Hackathon by AWS 参加予定',
+    description: '同ハッカソン二度目となる参加を予定しております',
+    image: 'https://media.connpass.com/thumbs/60/13/6013b22085b758ad96d21dd37f31870c.png',
+    links: [
+      {
+        url: 'https://progate.connpass.com/event/342402/',
+        label: 'Compass'
+      }
+    ]
+  },
 ];
