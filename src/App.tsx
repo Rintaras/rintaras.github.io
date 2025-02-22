@@ -149,7 +149,7 @@ function App() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Fullstack Engineer | Web & IoT | B3 at Nihon Univ.
+              Engineer | Web & IoT | B3 at Nihon Univ.
             </motion.p>
           </motion.div>
 
