@@ -1,12 +1,37 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
-import { useSpring, motion, useScroll } from 'framer-motion';
+import { useSpring, motion } from 'framer-motion';
+
+// WebGLサポートチェック関数
+function isWebGLAvailable() {
+  try {
+    const canvas = document.createElement('canvas');
+    return !!(window.WebGLRenderingContext &&
+      (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+  } catch (e) {
+    return false;
+  }
+}
+
+// フォールバックコンポーネント
+function FallbackBackground() {
+  return (
+    <div className="fixed inset-0 -z-10 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+      <div className="absolute inset-0 bg-black/20"></div>
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-gray-500/10 rounded-full blur-xl animate-pulse delay-500"></div>
+      </div>
+    </div>
+  );
+}
 
 function Scene({ scrollY }: { scrollY: number }) {
   const { camera } = useThree();
-  
+
   useEffect(() => {
     // Update camera position based on scroll
     camera.position.y = -scrollY * 0.002;
@@ -16,24 +41,24 @@ function Scene({ scrollY }: { scrollY: number }) {
     <>
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 5]} intensity={1} />
-      
-      <AnimatedSphere 
-        position={[-2, 0, 0]} 
-        color="#4B5563" 
-        speed={1.5} 
+
+      <AnimatedSphere
+        position={[-2, 0, 0]}
+        color="#4B5563"
+        speed={1.5}
         distort={0.5}
         scrollY={scrollY}
       />
-      <AnimatedSphere 
-        position={[2, -1, -2]} 
-        color="#3B82F6" 
-        speed={1} 
+      <AnimatedSphere
+        position={[2, -1, -2]}
+        color="#3B82F6"
+        speed={1}
         distort={0.3}
         scrollY={scrollY}
       />
-      
+
       <ParticleField scrollY={scrollY} />
-      
+
       <OrbitControls
         enableZoom={false}
         enablePan={false}
@@ -46,7 +71,7 @@ function Scene({ scrollY }: { scrollY: number }) {
   );
 }
 
-function AnimatedSphere({ position, color, speed, distort, scrollY }: { 
+function AnimatedSphere({ position, color, speed, distort, scrollY }: {
   position: [number, number, number];
   color: string;
   speed: number;
@@ -95,11 +120,11 @@ function AnimatedSphere({ position, color, speed, distort, scrollY }: {
 
 function ParticleField({ scrollY }: { scrollY: number }) {
   const particlesRef = useRef<THREE.Points>(null);
-  
+
   useFrame((state) => {
     if (!particlesRef.current) return;
     particlesRef.current.rotation.y += 0.0005;
-    
+
     // Scale particles based on scroll
     const scale = 1 - (scrollY * 0.001);
     particlesRef.current.scale.setScalar(Math.max(0.5, Math.min(1, scale)));
@@ -127,12 +152,44 @@ function ParticleField({ scrollY }: { scrollY: number }) {
 }
 
 export default function Background3D() {
-  const { scrollY } = useScroll();
+  const [webGLAvailable, setWebGLAvailable] = useState<boolean | null>(null);
+  const [hasError, setHasError] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    setWebGLAvailable(isWebGLAvailable());
+
+    // スクロールイベントリスナーを追加
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // WebGLが利用できない場合、フォールバックを表示
+  if (webGLAvailable === false || hasError) {
+    return <FallbackBackground />;
+  }
+
+  // WebGLサポートチェック中は何も表示しない
+  if (webGLAvailable === null) {
+    return null;
+  }
 
   return (
     <div className="fixed inset-0 -z-10">
-      <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-        <Scene scrollY={scrollY.get()} />
+      <Canvas
+        camera={{ position: [0, 0, 5], fov: 75 }}
+        onError={() => setHasError(true)}
+        gl={{
+          antialias: true,
+          alpha: true,
+          powerPreference: "high-performance"
+        }}
+      >
+        <Scene scrollY={scrollY} />
       </Canvas>
     </div>
   );

@@ -1,5 +1,10 @@
 import { Project, Skill, TimelineEvent } from './types';
 
+// デフォルト画像URL
+const DEFAULT_PROJECT_IMAGE = 'https://via.placeholder.com/400x300/1f2937/ffffff?text=Project';
+const DEFAULT_PROFILE_IMAGE = 'https://github.com/github.png';
+const DEFAULT_EVENT_IMAGE = 'https://via.placeholder.com/200x200/374151/ffffff?text=Event';
+
 export const projects: Project[] = [
   {
     id: 'ai-iot-device',

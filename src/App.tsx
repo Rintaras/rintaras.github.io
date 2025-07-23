@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, Suspense } from 'react';
-import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
+import { motion, useTransform, useSpring, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import Layout from './components/Layout';
 import { Code, Server, PenTool as Tool, ChevronDown } from 'lucide-react';
@@ -12,6 +12,8 @@ function App() {
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
+  const [scrollY, setScrollY] = useState(0);
   const lastScrollY = useRef(0);
   const profileRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -19,7 +21,6 @@ function App() {
   const mainRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
-  const { scrollY } = useScroll();
   const opacity = useSpring(
     useTransform(scrollY, [0, 100], [1, 0]),
     { stiffness: 300, damping: 30 }
@@ -28,6 +29,7 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      setScrollY(currentScrollY);
       setIsNavVisible(currentScrollY <= lastScrollY.current || currentScrollY <= 0);
       lastScrollY.current = currentScrollY;
     };
@@ -38,6 +40,10 @@ function App() {
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleImageError = (projectId: string) => {
+    setImageErrors(prev => new Set(prev).add(projectId));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -72,19 +78,18 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-900 to-fuchsia-900 text-gray-100 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYtMi42ODYgNi02cy0yLjY4Ni02LTYtNi02IDIuNjg2LTYgNiAyLjY4NiA2IDYgNnptMCAwYzMuMzE0IDAgNi0yLjY4NiA2LTZzLTIuNjg2LTYtNi02LTYgMi42ODYtNiA2IDIuNjg2IDYgNiA2em0yNCAwYzMuMzE0IDAgNi0yLjY4NiA2LTZzLTIuNjg2LTYtNi02LTYgMi42ODYtNiA2IDIuNjg2IDYgNiA2em0wIDBjMy4zMTQgMCA2LTIuNjg2IDYtNnMtMi42ODYtNi02LTYtNiAyLjY4Ni02IDYgMi42ODYgNiA2IDZ6IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48L3N2Zz4=')] animate-[pattern_20s_linear_infinite] opacity-30"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYtMi42ODYgNi02cy0yLjY4Ni02LTYtNi02IDIuNjg2LTYtNiAyLjY4NiA2IDYgNnptMCAwYzMuMzE0IDAgNi0yLjY4NiA2LTZzLTIuNjg2LTYtNi02LTYgMi42ODYtNiA2IDIuNjg2IDYgNiA2em0yNCAwYzMuMzE0IDAgNi0yLjY4NiA2LTZzLTIuNjg2LTYtNi02LTYgMi42ODYtNiA2IDIuNjg2IDYgNiA2em0wIDBjMy4zMTQgMCA2LTIuNjg2IDYtNnMtMi42ODYtNi02LTYtNiAyLjY4Ni02IDYgMi42ODYgNiA2IDZ6IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48L3N2Zz4=')] animate-[pattern_20s_linear_infinite] opacity-30"></div>
       </div>
 
       <div className="absolute top-1/4 -left-32 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
       <div className="absolute top-3/4 -right-32 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
 
-      <nav className={`fixed top-0 left-0 right-0 bg-black/30 backdrop-blur-md z-50 border-b border-white/10 transition-all duration-300 ${
-        isNavVisible ? 'translate-y-0' : '-translate-y-full'
-      }`}>
+      <nav className={`fixed top-0 left-0 right-0 bg-black/30 backdrop-blur-md z-50 border-b border-white/10 transition-all duration-300 ${isNavVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <motion.span 
+              <motion.span
                 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-fuchsia-500"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400 }}
@@ -98,8 +103,8 @@ function App() {
                   key={item}
                   onClick={() => scrollToSection(
                     item === 'Profile' ? profileRef :
-                    item === 'Projects' ? projectsRef :
-                    contactRef
+                      item === 'Projects' ? projectsRef :
+                        contactRef
                   )}
                   className="relative text-gray-300 hover:text-white transition-colors"
                   whileHover={{ scale: 1.05 }}
@@ -137,13 +142,13 @@ function App() {
             className="text-center mb-8"
           >
             <ProfileImage className="mb-8" />
-            <motion.h1 
+            <motion.h1
               className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-indigo-500"
               whileHover={{ scale: 1.02 }}
             >
               Rio Sato
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="text-2xl text-gray-400 mb-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -265,17 +270,27 @@ function App() {
                 >
                   <a
                     href={project.demoUrl}
-                    target="_blank"           
-                    rel="noopener noreferrer" 
-                    className="block"         
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
                   >
                     <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg transition-all duration-300 group-hover:shadow-2xl border border-emerald-800/50">
                       <div className="aspect-video relative overflow-hidden">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        />
+                        {!imageErrors.has(project.id) ? (
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            onError={() => handleImageError(project.id)}
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                            <div className="text-center text-gray-400">
+                              <div className="text-4xl mb-2">📁</div>
+                              <div className="text-sm">{project.title}</div>
+                            </div>
+                          </div>
+                        )}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                           <span className="text-white font-medium">
                             {project.description}

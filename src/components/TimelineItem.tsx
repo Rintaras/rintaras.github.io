@@ -1,7 +1,7 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink } from 'lucide-react';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 interface TimelineItemProps {
   year: string;
@@ -25,11 +25,24 @@ export default function TimelineItem({
     threshold: 0.1,
   });
 
+  const [imageError, setImageError] = useState(false);
+  const [scrollYProgress, setScrollYProgress] = useState(0);
   const itemRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: itemRef,
-    offset: ["start end", "end start"]
-  });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (itemRef.current) {
+        const rect = itemRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const progress = Math.max(0, Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height)));
+        setScrollYProgress(progress);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // 初期値を設定
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const lineHeight = useTransform(scrollYProgress, [0, 0.5], ["0%", "100%"]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
@@ -54,8 +67,13 @@ export default function TimelineItem({
           transition={{ duration: 0.5, delay: index * 0.2 }}
           className="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-400 to-indigo-500 flex items-center justify-center text-white overflow-hidden shadow-lg border-4 border-gray-800"
         >
-          {image ? (
-            <img src={image} alt={title} className="w-full h-full object-cover" />
+          {image && !imageError ? (
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-full object-cover"
+              onError={() => setImageError(true)}
+            />
           ) : (
             <span className="text-lg font-bold">{year}</span>
           )}
