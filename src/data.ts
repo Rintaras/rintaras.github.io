@@ -122,7 +122,7 @@ export const timelineEvents: TimelineEvent[] = [
     year: '2025.January',
     title: 'GeekCamp vol.20 参加',
     description: 'エンジニア交流アプリ「Map Chat」を開発',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtfTravZGY_vCHa19iroRhOXBp587xqGZ7Lg&s',
+    image: 'https://talent.supporterz.jp/geekpjt/assets/img/logo_geekcamp.png',
     links: [
       {
         url: 'https://github.com/matthewTechCom/giikucamp20',
@@ -140,7 +140,7 @@ export const timelineEvents: TimelineEvent[] = [
     year: '2024.March',
     title: 'Progate Hackathon by AWS 参加予定',
     description: '同ハッカソン二度目となる参加を予定しております',
-    image: 'https://media.connpass.com/thumbs/4d/d6/4dd6e151c8549e2abe961286531a4b5f.png',
+    image: 'https://media.connpass.com/thumbs/60/13/6013b22085b758ad96d21dd37f31870c.png',
     links: [
       {
         url: 'https://progate.connpass.com/event/342402/',
