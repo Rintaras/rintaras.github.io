@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, Suspense } from 'react';
-import { motion, useTransform, useSpring, AnimatePresence } from 'framer-motion';
+import { motion, useTransform, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import Layout from './components/Layout';
 import { Code, Server, PenTool as Tool, ChevronDown } from 'lucide-react';
@@ -20,11 +20,6 @@ function App() {
   const contactRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
-
-  const opacity = useSpring(
-    useTransform(scrollY, [0, 100], [1, 0]),
-    { stiffness: 300, damping: 30 }
-  );
 
   useEffect(() => {
     const handleScroll = () => {

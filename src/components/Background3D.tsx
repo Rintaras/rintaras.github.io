@@ -2,7 +2,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
 import { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
-import { useSpring, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 // WebGLサポートチェック関数
 function isWebGLAvailable() {
@@ -79,8 +79,8 @@ function AnimatedSphere({ position, color, speed, distort, scrollY }: {
   scrollY: number;
 }) {
   const meshRef = useRef<THREE.Mesh>(null);
-  const mouseX = useSpring(0);
-  const mouseY = useSpring(0);
+  const [mouseX, setMouseX] = useState(0);
+  const [mouseY, setMouseY] = useState(0);
 
   useFrame((state) => {
     if (!meshRef.current) return;
@@ -91,10 +91,10 @@ function AnimatedSphere({ position, color, speed, distort, scrollY }: {
 
     // React to mouse movement
     const { x, y } = state.mouse;
-    mouseX.set(x * 0.1);
-    mouseY.set(y * 0.1);
-    meshRef.current.position.x = position[0] + mouseX.get();
-    meshRef.current.position.z = position[2] + mouseY.get();
+    setMouseX(x * 0.1);
+    setMouseY(y * 0.1);
+    meshRef.current.position.x = position[0] + mouseX;
+    meshRef.current.position.z = position[2] + mouseY;
 
     // Scale based on scroll
     const scale = 1.5 - (scrollY * 0.001);
