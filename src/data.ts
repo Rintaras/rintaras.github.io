@@ -42,18 +42,6 @@ export const projects: Project[] = [
     screenshots: [
       'https://rintarasportfolio.s3.ap-northeast-1.amazonaws.com/TripMateImage.png'
     ]
-  },
-  {
-    id: 'Teamder',
-    title: 'Teamder',
-    description: '初めてのネイティブアプリ開発。技術を語り合ったり、共同開発を気軽に募集できるエンジニア同士のマッチングを目的としたアプリを開発しました。',
-    image: 'https://ptera-publish.topaz.dev/project/01JQ1053RGPF0F3XQQ4A5MW3D2.jpeg',
-    duration: '2025.03',
-    role: 'リードデベロッパー',
-    technologies: ['React-Native', 'Expo', 'AWS'],
-    screenshots: [
-      'https://rintarasportfolio.s3.ap-northeast-1.amazonaws.com/TripMateImage.png'
-    ]
   }
 ];
 
@@ -89,10 +77,16 @@ export const skills: Skill[] = [
 
 export const timelineEvents: TimelineEvent[] = [
   {
+    year: '2003.May',
+    title: '誕生',
+    description: '沖縄で生まれ、学童期～青年期を茨城で過ごす',
+    image: 'https://www.sozailab.jp/db_img/sozai/5215/39809ece85248c1572f00cdb6b9bbf42.jpg'
+  },
+  {
     year: '2022.April',
     title: '日本大学 入学',
-    description: '工学部情報工学科に入学',
-    image: 'https://pbs.twimg.com/profile_images/923458947612229632/SnABWuYV_400x400.jpg',
+    description: '工学部情報工学科に入学。一人暮らしを開始する',
+    image: 'https://www.nihon-u.ac.jp/nu_logo.png',
     links: [
       {
         url: 'https://www.ce.nihon-u.ac.jp/computer-science/',
@@ -114,13 +108,13 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2024.December',
-    title: 'Progate Hackathon by AWS 2024.12 入賞',
+    title: 'Progate Hackathon by AWS 入賞',
     description: 'ハッカソン初参加。AI搭載IoTデバイスを開発し企業賞を受賞',
     image: 'https://media.connpass.com/thumbs/89/30/893061def50d6db3b0b799171d78e678.png',
     links: [
       {
         url: 'https://topaz.dev/projects/d07aaceab7659b8beb47',
-        label: 'Topa’z'
+        label: 'Topa’s'
       }
     ]
   },
@@ -144,25 +138,13 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2024.March',
-    title: 'Progate Hackathon by AWS 2025.03 参加',
-    description: 'エンジニアの技術の点に着目したマッチングアプリを開発',
-    image: 'https://topaz.dev/_next/image?url=https%3A%2F%2Fptera-publish.topaz.dev%2Fproject%2F01JPQKCCDN8HCNFG96E7WKB8TN.jpeg&w=3840&q=75',
+    title: 'Progate Hackathon by AWS 参加予定',
+    description: '同ハッカソン二度目となる参加を予定しております',
+    image: 'https://media.connpass.com/thumbs/4d/d6/4dd6e151c8549e2abe961286531a4b5f.png',
     links: [
       {
-        url: 'https://topaz.dev/projects/55b22c80c6b909240cef',
-        label: 'Topa’z'
-      }
-    ]
-  },
-  {
-    year: '2024.July',
-    title: 'Progate Hackathon by AWS 2025.07 参加',
-    description: '同ハッカソン3度目の参加予定',
-    image: 'https://media.connpass.com/thumbs/da/65/da65409382a287a699383d33cf3c3419.png',
-    links: [
-      {
-        url: 'https://progate.connpass.com/event/357899/',
-        label: 'connpass'
+        url: 'https://progate.connpass.com/event/342402/',
+        label: 'Compass'
       }
     ]
   },
