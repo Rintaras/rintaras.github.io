@@ -121,7 +121,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </a>
           </div>
           <p className="mt-4 text-center text-gray-500 text-sm">
-            © 2024 Your Name. All rights reserved.
+            © 2024 Rintaras. All rights reserved.
           </p>
         </div>
       </footer>
