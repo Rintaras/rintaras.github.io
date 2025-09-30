@@ -105,7 +105,7 @@ function AnimatedSphere({ position, color, speed, distort, scrollY }: {
   });
 
   return (
-    <Sphere ref={meshRef} args={[1, 100, 200]} scale={[1.5, 1.5, 1.5]}>
+    <Sphere ref={meshRef} args={[1, 32, 32]} scale={[1.5, 1.5, 1.5]}>
       <MeshDistortMaterial
         color={color}
         attach="material"
@@ -135,8 +135,8 @@ function ParticleField({ scrollY }: { scrollY: number }) {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={2000}
-          array={new Float32Array(6000).map(() => (Math.random() - 0.5) * 20)}
+          count={500}
+          array={new Float32Array(1500).map(() => (Math.random() - 0.5) * 20)}
           itemSize={3}
         />
       </bufferGeometry>

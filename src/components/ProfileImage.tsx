@@ -26,7 +26,10 @@ export default function ProfileImage({ className = '' }: ProfileImageProps) {
             src={imageUrl}
             alt="Profile"
             className="w-full h-full object-cover"
-            onError={() => setImageError(true)}
+            onError={() => {
+              console.warn(`Failed to load profile image: ${imageUrl}`);
+              setImageError(true);
+            }}
           />
         </motion.div>
       </div>

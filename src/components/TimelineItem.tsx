@@ -1,4 +1,4 @@
-import { motion, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink } from 'lucide-react';
 import { useRef, useState, useEffect } from 'react';
@@ -44,15 +44,16 @@ export default function TimelineItem({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const lineHeight = useTransform(scrollYProgress, [0, 0.5], ["0%", "100%"]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  // スクロール進行度に基づいて値を計算
+  const lineHeight = scrollYProgress > 0.5 ? "100%" : `${scrollYProgress * 200}%`;
+  const scale = scrollYProgress > 0.5 ? 1 : 0.8 + (scrollYProgress * 0.4);
+  const opacity = scrollYProgress > 0.2 ? 1 : scrollYProgress * 5;
 
   return (
     <motion.div
       ref={itemRef}
       className="flex gap-8 items-start pl-4 relative"
-      style={{ scale, opacity }}
+      style={{ transform: `scale(${scale})`, opacity }}
     >
       {/* Vertical connecting line */}
       <motion.div
@@ -72,10 +73,15 @@ export default function TimelineItem({
               src={image}
               alt={title}
               className="w-full h-full object-cover"
-              onError={() => setImageError(true)}
+              onError={() => {
+                console.warn(`Failed to load image: ${image}`);
+                setImageError(true);
+              }}
             />
           ) : (
-            <span className="text-lg font-bold">{year}</span>
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-emerald-400 to-indigo-500">
+              <span className="text-lg font-bold text-white">{year}</span>
+            </div>
           )}
         </motion.div>
       </div>

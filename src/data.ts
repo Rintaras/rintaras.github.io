@@ -10,13 +10,13 @@ export const projects: Project[] = [
     id: 'ai-iot-device',
     title: 'AI搭載IoTデバイス',
     description: '大学の友人5名で全員ハッカソン初参加の中挑みました。慣れない短期開発、触れたことの無いAWS、初のIoT開発と様々な壁がある中、企業賞をいただくことができました。',
-    image: 'https://topaz.dev/_next/image?url=https%3A%2F%2Fptera-publish.topaz.dev%2Fproject%2F01JEHDFZEVWFY0MSJXM5332F1V.png&w=1920&q=75',
+    image: 'https://via.placeholder.com/400x300/374151/ffffff?text=AI+IoT+Device',
     duration: '2024.12',
     role: 'ハッカソン開発',
     technologies: ['RasberryPi', 'Python', 'AWS IoTcore'],
     demoUrl: 'https://topaz.dev/projects/d07aaceab7659b8beb47',
     screenshots: [
-      'https://topaz.dev/_next/image?url=https%3A%2F%2Fptera-publish.topaz.dev%2Fproject%2F01JEHDFZEVWFY0MSJXM5332F1V.png&w=1920&q=75'
+      'https://via.placeholder.com/400x300/374151/ffffff?text=AI+IoT+Device'
     ]
   },
   {
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     id: 'Teamder',
     title: 'Teamder',
     description: '初めてのネイティブアプリ開発。技術を語り合ったり、共同開発を気軽に募集できるエンジニア同士のマッチングを目的としたアプリを開発しました。',
-    image: 'https://ptera-publish.topaz.dev/project/01JQ1053RGPF0F3XQQ4A5MW3D2.jpeg',
+    image: 'https://via.placeholder.com/400x300/374151/ffffff?text=Teamder',
     duration: '2025.03',
     role: 'リードデベロッパー',
     technologies: ['React-Native', 'Expo', 'AWS'],
@@ -144,19 +144,13 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2024.March',
-<<<<<<< HEAD
-    title: 'Progate Hackathon by AWS 参加予定',
-    description: '同ハッカソン二度目となる参加を予定しております',
-    image: 'https://media.connpass.com/thumbs/60/13/6013b22085b758ad96d21dd37f31870c.png',
-=======
     title: 'Progate Hackathon by AWS 2025.03 参加',
     description: 'エンジニアの技術の点に着目したマッチングアプリを開発',
-    image: 'https://topaz.dev/_next/image?url=https%3A%2F%2Fptera-publish.topaz.dev%2Fproject%2F01JPQKCCDN8HCNFG96E7WKB8TN.jpeg&w=3840&q=75',
->>>>>>> parent of f952a5e (Revert "更新")
+    image: 'https://via.placeholder.com/400x300/374151/ffffff?text=Teamder',
     links: [
       {
         url: 'https://topaz.dev/projects/55b22c80c6b909240cef',
-        label: 'Topa’z'
+        label: 'Topaz'
       }
     ]
   },

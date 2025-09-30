@@ -276,7 +276,10 @@ function App() {
                             src={project.image}
                             alt={project.title}
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                            onError={() => handleImageError(project.id)}
+                            onError={() => {
+                              console.warn(`Failed to load project image: ${project.image}`);
+                              handleImageError(project.id);
+                            }}
                           />
                         ) : (
                           <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
