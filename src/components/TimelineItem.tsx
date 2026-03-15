@@ -99,7 +99,14 @@ export default function TimelineItem({
         >
           <div className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-indigo-500 font-semibold mb-2">{year}</div>
           <h3 className="text-xl font-bold mb-3 text-gray-100">{title}</h3>
-          <p className="text-gray-400 mb-4">{description}</p>
+          <p className="text-gray-400 mb-4">
+            {description.split('\n').map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < description.split('\n').length - 1 && <br />}
+              </span>
+            ))}
+          </p>
           {links && links.length > 0 && (
             <div className="flex flex-wrap gap-3">
               {links.map((link, i) => (
