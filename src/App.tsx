@@ -1,10 +1,10 @@
-import React, { useRef, useEffect, useState, Suspense } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { motion, useTransform, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import Layout from './components/Layout';
 import { Code, Server, PenTool as Tool, ChevronDown } from 'lucide-react';
 import { skills, timelineEvents, projects } from './data';
-import Background3D from './components/Background3D';
+
 import TimelineItem from './components/TimelineItem';
 import ProfileImage from './components/ProfileImage';
 
@@ -71,23 +71,16 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-900 to-fuchsia-900 text-gray-100 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYtMi42ODYgNi02cy0yLjY4Ni02LTYtNi02IDIuNjg2LTYtNiAyLjY4NiA2IDYgNnptMCAwYzMuMzE0IDAgNi0yLjY4NiA2LTZzLTIuNjg2LTYtNi02LTYgMi42ODYtNiA2IDIuNjg2IDYgNiA2em0yNCAwYzMuMzE0IDAgNi0yLjY4NiA2LTZzLTIuNjg2LTYtNi02LTYgMi42ODYtNiA2IDIuNjg2IDYgNiA2em0wIDBjMy4zMTQgMCA2LTIuNjg2IDYtNnMtMi42ODYtNi02LTYtNiAyLjY4Ni02IDYgMi42ODYgNiA2IDZ6IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48L3N2Zz4=')] animate-[pattern_20s_linear_infinite] opacity-30"></div>
-      </div>
-
-      <div className="absolute top-1/4 -left-32 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-      <div className="absolute top-3/4 -right-32 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-
-      <nav className={`fixed top-0 left-0 right-0 bg-black/30 backdrop-blur-md z-50 border-b border-white/10 transition-all duration-300 ${isNavVisible ? 'translate-y-0' : '-translate-y-full'
+    <div className="min-h-screen bg-[#030303] text-gray-100 relative overflow-hidden">
+      <nav className={`fixed top-0 left-0 right-0 bg-black/40 backdrop-blur-md z-50 border-b border-white/10 transition-all duration-300 ${isNavVisible ? 'translate-y-0' : '-translate-y-full'
         }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <motion.span
-                className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-fuchsia-500"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400 }}
+                className="text-xl font-bold tracking-tight text-white"
+                whileHover={{ opacity: 0.8 }}
+                transition={{ duration: 0.2 }}
               >
                 Portfolio
               </motion.span>
@@ -107,10 +100,10 @@ function App() {
                 >
                   {item}
                   <motion.div
-                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-emerald-400 to-fuchsia-500 origin-left"
+                    className="absolute -bottom-1 left-0 w-full h-px bg-white origin-left"
                     initial={{ scaleX: 0 }}
                     whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
                   />
                 </motion.button>
               ))}
@@ -119,9 +112,15 @@ function App() {
         </div>
       </nav>
 
-      <Suspense fallback={null}>
-        <Background3D />
-      </Suspense>
+      {/* 軽量化のためのCSSバックグラウンド */}
+      <div className="fixed inset-0 -z-10 bg-[#050505]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_120%)]" />
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
+        {/* Top/Bottom glowing lines */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neutral-700 to-transparent opacity-40" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neutral-700 to-transparent opacity-40" />
+      </div>
 
       <main ref={mainRef} className="relative pt-24">
         <motion.div
@@ -138,7 +137,7 @@ function App() {
           >
             <ProfileImage className="mb-8" />
             <motion.h1
-              className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-indigo-500"
+              className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight text-white"
               whileHover={{ scale: 1.02 }}
             >
               Rio Sato
@@ -182,9 +181,9 @@ function App() {
               className="grid grid-cols-1 md:grid-cols-3 gap-8"
             >
               {[
-                { icon: <Code className="w-6 h-6 text-emerald-400" />, title: '言語', category: 'language' },
-                { icon: <Server className="w-6 h-6 text-indigo-500" />, title: 'フレームワーク', category: 'framework' },
-                { icon: <Tool className="w-6 h-6 text-emerald-500" />, title: 'ツール', category: 'tool' }
+                { icon: <Code className="w-5 h-5 text-gray-400" />, title: 'Language', category: 'language' },
+                { icon: <Server className="w-5 h-5 text-gray-400" />, title: 'Framework', category: 'framework' },
+                { icon: <Tool className="w-5 h-5 text-gray-400" />, title: 'Tool', category: 'tool' }
               ].map((section, index) => (
                 <motion.div
                   key={section.category}
@@ -192,11 +191,11 @@ function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2 }}
-                  className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-emerald-800/50"
+                  className="bg-[#0a0a0a] rounded-xl p-8 border border-white/5 hover:border-white/10 transition-colors duration-300"
                 >
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-6 text-gray-200">
                     {section.icon}
-                    <h3 className="text-xl font-semibold ml-2">{section.title}</h3>
+                    <h3 className="text-lg font-medium ml-3 uppercase tracking-wider">{section.title}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {skills
@@ -205,7 +204,7 @@ function App() {
                         <motion.span
                           key={skill.name}
                           whileHover={{ scale: 1.05, y: -2 }}
-                          className="px-3 py-1 bg-gray-800 rounded-full text-sm font-medium text-gray-300"
+                          className="px-4 py-1.5 bg-white/5 hover:bg-white/10 rounded-full text-xs font-medium text-gray-300 transition-colors border border-white/5"
                         >
                           {skill.name}
                         </motion.span>
@@ -222,8 +221,8 @@ function App() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="mt-20"
             >
-              <h2 className="text-3xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-indigo-500">
-                タイムライン
+              <h2 className="text-3xl font-light mb-16 text-center text-white tracking-widest uppercase">
+                Timeline
               </h2>
               <div className="space-y-12">
                 {timelineEvents.map((event, index) => (
@@ -248,7 +247,7 @@ function App() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-indigo-500"
+              className="text-3xl font-light mb-16 text-center text-white tracking-widest uppercase"
             >
               Projects
             </motion.h2>
@@ -269,7 +268,7 @@ function App() {
                     rel="noopener noreferrer"
                     className="block"
                   >
-                    <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg transition-all duration-300 group-hover:shadow-2xl border border-emerald-800/50">
+                    <div className="bg-[#0a0a0a] rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02] border border-white/5 hover:border-white/20">
                       <div className="aspect-video relative overflow-hidden">
                         {!imageErrors.has(project.id) ? (
                           <img
@@ -322,7 +321,7 @@ function App() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-indigo-500"
+              className="text-3xl font-light mb-16 text-center text-white tracking-widest uppercase"
             >
               Contact
             </motion.h2>
@@ -332,9 +331,9 @@ function App() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-emerald-800/50"
+                className="bg-[#0a0a0a] rounded-xl p-8 border border-white/5"
               >
-                <h3 className="text-xl font-semibold mb-6">SNS</h3>
+                <h3 className="text-xl font-light mb-8 text-white uppercase tracking-wider">Connect</h3>
                 <div className="space-y-4">
                   {[
                     { name: 'GitHub', href: 'https://github.com/Rintaras' },
@@ -343,7 +342,7 @@ function App() {
                     <motion.a
                       key={social.name}
                       href={social.href}
-                      className="flex items-center text-gray-400 hover:text-emerald-400 transition-colors"
+                      className="flex items-center text-gray-400 hover:text-white transition-colors py-2"
                       whileHover={{ x: 5 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -358,13 +357,13 @@ function App() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-emerald-800/50"
+                className="bg-[#0a0a0a] rounded-xl p-8 border border-white/5"
               >
-                <h3 className="text-xl font-semibold mb-6">お問い合わせフォーム</h3>
-                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                <h3 className="text-xl font-light mb-8 text-white uppercase tracking-wider">Send a Message</h3>
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-1">
-                      お名前
+                    <label htmlFor="name" className="block text-xs font-medium mb-2 text-gray-400 uppercase tracking-wider">
+                      Name
                     </label>
                     <input
                       type="text"
@@ -372,12 +371,12 @@ function App() {
                       name="user_name"
                       required
                       disabled={isSubmitting}
-                      className="w-full px-3 py-2 bg-gray-800 border border-emerald-800 rounded-lg focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200 text-gray-100 disabled:opacity-50"
+                      className="w-full px-4 py-3 bg-[#111] border border-white/10 rounded-lg focus:ring-1 focus:ring-white focus:border-white transition-all duration-300 text-gray-100 disabled:opacity-50 outline-none"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-1">
-                      メールアドレス
+                    <label htmlFor="email" className="block text-xs font-medium mb-2 text-gray-400 uppercase tracking-wider">
+                      Email address
                     </label>
                     <input
                       type="email"
@@ -385,12 +384,12 @@ function App() {
                       name="user_email"
                       required
                       disabled={isSubmitting}
-                      className="w-full px-3 py-2 bg-gray-800 border border-emerald-800 rounded-lg focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200 text-gray-100 disabled:opacity-50"
+                      className="w-full px-4 py-3 bg-[#111] border border-white/10 rounded-lg focus:ring-1 focus:ring-white focus:border-white transition-all duration-300 text-gray-100 disabled:opacity-50 outline-none"
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-1">
-                      メッセージ
+                    <label htmlFor="message" className="block text-xs font-medium mb-2 text-gray-400 uppercase tracking-wider">
+                      Message
                     </label>
                     <textarea
                       id="message"
@@ -398,7 +397,7 @@ function App() {
                       rows={5}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-3 py-2 bg-gray-800 border border-emerald-800 rounded-lg focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200 text-gray-100 disabled:opacity-50"
+                      className="w-full px-4 py-3 bg-[#111] border border-white/10 rounded-lg focus:ring-1 focus:ring-white focus:border-white transition-all duration-300 text-gray-100 disabled:opacity-50 outline-none resize-none"
                     ></textarea>
                   </div>
                   <motion.button
@@ -406,7 +405,7 @@ function App() {
                     disabled={isSubmitting}
                     whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                    className="w-full px-4 py-2 bg-gradient-to-r from-emerald-400 to-indigo-500 text-white rounded-lg hover:from-emerald-500 hover:to-indigo-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-4 bg-white text-black font-medium tracking-wide uppercase text-sm rounded-lg hover:bg-gray-200 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed mt-4"
                   >
                     {isSubmitting ? '送信中...' : '送信する'}
                   </motion.button>

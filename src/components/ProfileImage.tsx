@@ -16,9 +16,9 @@ export default function ProfileImage({ className = '' }: ProfileImageProps) {
   return (
     <div className={`relative ${className}`}>
       <div className="relative w-48 h-48 mx-auto">
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-indigo-500 rounded-full animate-pulse blur-xl opacity-25"></div>
+        <div className="absolute inset-0 bg-white rounded-full animate-pulse blur-2xl opacity-[0.03]"></div>
         <motion.div
-          className="relative w-full h-full rounded-full overflow-hidden border-4 border-gray-800 shadow-xl"
+          className="relative w-full h-full rounded-full overflow-hidden border border-white/20 shadow-2xl"
           whileHover={{ scale: 1.05, rotate: 5 }}
           transition={{ type: "spring", stiffness: 300 }}
         >

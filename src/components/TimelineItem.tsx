@@ -57,7 +57,7 @@ export default function TimelineItem({
     >
       {/* Vertical connecting line */}
       <motion.div
-        className="absolute left-[2.5rem] top-0 w-px bg-gradient-to-b from-emerald-400 to-indigo-500 origin-top"
+        className="absolute left-[2.5rem] top-0 w-px bg-white/20 origin-top"
         style={{ height: lineHeight }}
       />
 
@@ -66,7 +66,7 @@ export default function TimelineItem({
           initial={{ scale: 0, opacity: 0 }}
           animate={inView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
           transition={{ duration: 0.5, delay: index * 0.2 }}
-          className="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-400 to-indigo-500 flex items-center justify-center text-white overflow-hidden shadow-lg border-4 border-gray-800"
+          className="w-20 h-20 rounded-full bg-[#111] border-2 border-white/20 flex items-center justify-center text-white overflow-hidden shadow-lg"
         >
           {image && !imageError ? (
             <img
@@ -79,8 +79,8 @@ export default function TimelineItem({
               }}
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-emerald-400 to-indigo-500">
-              <span className="text-lg font-bold text-white">{year}</span>
+            <div className="w-full h-full flex items-center justify-center bg-[#1a1a1a]">
+              <span className="text-sm font-medium text-gray-400 tracking-wider">{year}</span>
             </div>
           )}
         </motion.div>
@@ -95,11 +95,11 @@ export default function TimelineItem({
       >
         <motion.div
           whileHover={{ y: -5 }}
-          className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-emerald-800/50"
+          className="bg-[#0a0a0a] p-8 rounded-xl transition-all duration-300 border border-white/5 hover:border-white/20"
         >
-          <div className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-indigo-500 font-semibold mb-2">{year}</div>
-          <h3 className="text-xl font-bold mb-3 text-gray-100">{title}</h3>
-          <p className="text-gray-400 mb-4">
+          <div className="text-sm text-gray-400 tracking-widest mb-3 uppercase">{year}</div>
+          <h3 className="text-2xl font-medium mb-4 text-white tracking-tight">{title}</h3>
+          <p className="text-gray-400 mb-6 leading-relaxed">
             {description.split('\n').map((line, i) => (
               <span key={i}>
                 {line}
@@ -115,11 +115,11 @@ export default function TimelineItem({
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-sm text-emerald-400 hover:text-emerald-300 transition-colors"
+                  className="inline-flex items-center text-sm font-medium text-white hover:text-gray-300 transition-colors"
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <ExternalLink size={16} className="mr-1" />
+                  <ExternalLink size={14} className="mr-2" />
                   {link.label}
                 </motion.a>
               ))}
