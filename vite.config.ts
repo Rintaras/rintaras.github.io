@@ -17,6 +17,7 @@ export default defineConfig({
     exclude: ['lucide-react']
   },
   build: {
+    outDir: 'docs',
     target: 'esnext',
     minify: 'esbuild',
     sourcemap: false
