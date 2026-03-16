@@ -2,11 +2,22 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion, useTransform, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import Layout from './components/Layout';
-import { Code, Server, PenTool as Tool, ChevronDown } from 'lucide-react';
+import Code from 'lucide-react/dist/esm/icons/code';
+import Server from 'lucide-react/dist/esm/icons/server';
+import Tool from 'lucide-react/dist/esm/icons/pen-tool';
+import ChevronDown from 'lucide-react/dist/esm/icons/chevron-down';
 import { skills, timelineEvents, projects } from './data';
 
 import TimelineItem from './components/TimelineItem';
 import ProfileImage from './components/ProfileImage';
+
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+import Grass from './components/Grass';
+import { Terrain } from './components/Terrain';
+import { DirectionalLight } from './components/DirectionalLight';
+import { Leva } from 'leva';
+
 
 function App() {
   const [isNavVisible, setIsNavVisible] = useState(true);
@@ -122,6 +133,18 @@ function App() {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neutral-700 to-transparent opacity-40" />
       </div>
 
+      <Leva hidden={true} />
+      <div className="fixed inset-0 -z-5 pointer-events-none opacity-60">
+        <Canvas camera={{ position: [0, 2, 8], fov: 60 }} dpr={[1, 1]} gl={{ powerPreference: "high-performance", antialias: false }}>
+          <Suspense fallback={null}>
+            <ambientLight intensity={0.5} />
+            <DirectionalLight />
+            <Grass patchSize={20} />
+            <Terrain patchSize={20} />
+          </Suspense>
+        </Canvas>
+      </div>
+
       <main ref={mainRef} className="relative pt-24">
         <motion.div
           initial={{ opacity: 0 }}
@@ -148,7 +171,7 @@ function App() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Engineer | Web & IoT | B3 at Nihon Univ.
+              Student Engineer | Web & IoT | B4 at Nihon Univ.
             </motion.p>
           </motion.div>
 
