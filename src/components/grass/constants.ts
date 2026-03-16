@@ -1,8 +1,8 @@
 // ============================================================================
 // Constants
 // ============================================================================
-export const DEFAULT_GRID_SIZE = 200;
-export const DEFAULT_PATCH_SIZE = 20;
+export const DEFAULT_GRID_SIZE = 300;
+export const DEFAULT_PATCH_SIZE = 30;
 export const BLADE_SEGMENTS = 5;
 
 // Legacy exports for backwards compatibility

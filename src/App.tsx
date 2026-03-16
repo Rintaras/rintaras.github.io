@@ -139,8 +139,8 @@ function App() {
           <Suspense fallback={null}>
             <ambientLight intensity={0.5} />
             <DirectionalLight />
-            <Grass patchSize={20} />
-            <Terrain patchSize={20} />
+            <Grass patchSize={30} />
+            <Terrain patchSize={30} />
           </Suspense>
         </Canvas>
       </div>
