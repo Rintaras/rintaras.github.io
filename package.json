@@ -13,7 +13,6 @@
     "@emailjs/browser": "^4.1.0",
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
-    "@supabase/supabase-js": "^2.39.7",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.8",
     "gl-noise": "^1.6.1",
