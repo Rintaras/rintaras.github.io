@@ -196,6 +196,18 @@ export const timelineEvents: TimelineEvent[] = [
     ]
   },
   {
+    year: '2026.March ~',
+    title: 'Findy Campus Hackathon 2026.03 企業賞を受賞',
+    description: 'エントリーエンジニア向けプラットフォーム「Hack Splinter」を開発し企業賞を受賞',
+    image: 'https://media.connpass.com/thumbs/00/07/000776a77242b71f0cc3730b59a7fb1d.png',
+    links: [
+      {
+        url: 'https://x.com/ayamakkie/status/2034962401490346375?s=20',
+        label: '懇親会の様子(X引用)'
+      }
+    ]
+  },
+  {
     year: '2026.April',
     title: '日本大学大学院 工学研究科　情報工学専攻　修士課程入学予定',
     description: 'ネットワーク分野にて研究の継続予定',
