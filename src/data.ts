@@ -175,7 +175,7 @@ export const timelineEvents: TimelineEvent[] = [
     year: '2026.February ~',
     title: '株式会社CyberAgent インターン参加中',
     description: '同社開催「Go College」にてサーバーサイドの研修を受講すると共に、API実装やパフォーマンスチューニングや負荷試験を行っています。',
-    image: 'https://scontent-nrt6-1.xx.fbcdn.net/v/t39.30808-6/326460725_1115866529095462_5168107253345316339_n.png?_nc_cat=105&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=GiQzKFntQQ0Q7kNvwE42D7i&_nc_oc=AdmNtriBq_yWuAXiFJvvCL-LdrQIqu-HoG8L0_MpLpntGMeArOTosW6tg8kzqGuKLoM&_nc_zt=23&_nc_ht=scontent-nrt6-1.xx&_nc_gid=4MIV7IboAt51lKYIOtg-Gw&_nc_ss=8&oh=00_Afx8kf0RkBtYguj9CTr_XqaIOsg9aP0Pvwx5ouys_wuGWA&oe=69BDF41F',
+    image: 'https://www.cyberagent.co.jp/files/topics/32665_ext_03_0.jpg?width=824&height=464&scale=2',
     links: [
       {
         url: 'https://www.cyberagent.co.jp/careers/students/event/detail/id=32665',
