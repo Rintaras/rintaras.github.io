@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useTransform, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
-import Layout from './components/Layout';
 import Code from 'lucide-react/dist/esm/icons/code';
 import Server from 'lucide-react/dist/esm/icons/server';
 import Tool from 'lucide-react/dist/esm/icons/pen-tool';
