@@ -209,8 +209,8 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2026.April',
-    title: '日本大学大学院 工学研究科　情報工学専攻　修士課程入学予定',
-    description: 'ネットワーク分野にて研究の継続予定',
+    title: '日本大学大学院 工学研究科　情報工学専攻　修士課程入学',
+    description: 'ネットワーク分野にて研究の継続',
     image: 'https://www.ce.nihon-u.ac.jp/nue/wp-content/uploads/2025/09/news_thumbnail.jpg',
   },
 ];
