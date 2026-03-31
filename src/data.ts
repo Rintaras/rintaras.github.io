@@ -144,7 +144,7 @@ export const timelineEvents: TimelineEvent[] = [
   {
     year: '2025.February',
     title: '学内コンテスト 最優秀賞受賞',
-    description: '大学内ソフトウェアコンテストにて「TripMate」を開発し最優秀賞を受賞',
+    description: '大学内ソフトウェアコンテストにて「TripMate」を開発し最優秀賞を受賞\n旅行に関する情報管理をAIによって最適化し、旅行計画を立てることができるアプリを開発しました。',
     image: 'https://rintarasportfolio.s3.ap-northeast-1.amazonaws.com/TripMate.png'
   },
   {
