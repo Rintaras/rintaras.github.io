@@ -172,9 +172,9 @@ export const timelineEvents: TimelineEvent[] = [
     ]
   },
   {
-    year: '2026.February ~',
-    title: '株式会社CyberAgent インターン参加中',
-    description: '同社開催「Go College」にてサーバーサイドの研修を受講すると共に、API実装やパフォーマンスチューニングや負荷試験を行っています。',
+    year: '2026.February ~ March',
+    title: '株式会社CyberAgent インターン参加(Online)',
+    description: '同社開催「Go College」にてサーバーサイドの研修を受講し、基本文法からAPI実装、パフォーマンスチューニング等を学びました。',
     image: 'https://www.cyberagent.co.jp/files/topics/32665_ext_03_0.jpg?width=824&height=464&scale=2',
     links: [
       {
@@ -192,6 +192,18 @@ export const timelineEvents: TimelineEvent[] = [
       {
         url: 'https://x.com/nihonuniv_ce_cs/status/2024688101160042620?s=20',
         label: '公式X'
+      }
+    ]
+  },
+  {
+    year: '2026.February ~ March',
+    title: '株式会社CyberAgent インターン参加(Offline)',
+    description: '同社開催「Go College」にて仕様書からAPI実装、リアーキテクチャ設計、ボトルネックの解消を行いました。',
+    image: 'https://www.cyberagent.co.jp/files/topics/32665_ext_03_0.jpg?width=824&height=464&scale=2',
+    links: [
+      {
+        url: 'https://www.cyberagent.co.jp/careers/students/event/detail/id=32665',
+        label: '公式サイト'
       }
     ]
   },
