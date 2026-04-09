@@ -170,7 +170,7 @@ function App() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Student Engineer | Web & IoT | B4 at Nihon Univ.
+              Student Engineer | Web & IoT | M1 at Nihon Univ Graduate School.
             </motion.p>
           </motion.div>
 
