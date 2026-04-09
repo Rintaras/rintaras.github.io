@@ -225,4 +225,16 @@ export const timelineEvents: TimelineEvent[] = [
     description: 'ネットワーク分野にて研究の継続',
     image: 'https://www.ce.nihon-u.ac.jp/nue/wp-content/uploads/2025/09/news_thumbnail.jpg',
   },
+  {
+    year: '2026.April',
+    title: 'Progate Hackathon by AWS 最終ver 2026.04 参加予定',
+    description: 'AWS Loft Up Tokyo会場での最終開催のProgate Hackathon by AWSへ参加予定',
+    image: 'https://media.connpass.com/thumbs/91/16/91161c4216bb5770cdf99197d6847425.png',
+    links: [
+      {
+        url: 'https://progate.connpass.com/event/386402/',
+        label: 'Connpass'
+      }
+    ]
+  }
 ];
