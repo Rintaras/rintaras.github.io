@@ -7,6 +7,20 @@ const DEFAULT_EVENT_IMAGE = 'https://via.placeholder.com/200x200/374151/ffffff?t
 
 export const projects: Project[] = [
   {
+    id: 'motion-dile',
+    title: 'Motion Dile（ワードウルフ3D版）',
+    description: 'Progate Hackathon by AWS最終開催にて優秀賞を受賞。手でワニを操りながらAIが配った行動ミッションに沿って動く、人狼×モーション操作の新感覚パーティーゲームを開発しました。',
+    image: 'https://media.connpass.com/thumbs/91/16/91161c4216bb5770cdf99197d6847425.png',
+    duration: '2026.04',
+    role: 'アーキテクチャ設計・3D表現・UI実装',
+    technologies: ['Vue', 'Three.js', 'Go', 'Redis', 'AWS', 'Terraform'],
+    demoUrl: 'https://motiondile.net/',
+    githubUrl: 'https://github.com/NUMaters/WaniAR',
+    screenshots: [
+      'https://media.connpass.com/thumbs/91/16/91161c4216bb5770cdf99197d6847425.png'
+    ]
+  },
+  {
     id: 'ai-iot-device',
     title: 'AI搭載IoTデバイス',
     description: '大学の友人5名で全員ハッカソン初参加の中挑みました。慣れない短期開発、触れたことの無いAWS、初のIoT開発と様々な壁がある中、企業賞をいただくことができました。',
@@ -227,10 +241,14 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2026.April',
-    title: 'Progate Hackathon by AWS 最終ver 2026.04 参加予定',
-    description: 'AWS Loft Up Tokyo会場での最終開催のProgate Hackathon by AWSへ参加予定',
+    title: 'Progate Hackathon by AWS 最終ver 2026.04 優秀賞を受賞',
+    description: 'AWS Loft Up Tokyo会場での最終開催のProgate Hackathon by AWSにて「Motion Dile（ワードウルフ3D版）」を開発し優秀賞を受賞',
     image: 'https://media.connpass.com/thumbs/91/16/91161c4216bb5770cdf99197d6847425.png',
     links: [
+      {
+        url: 'https://topaz.dev/projects/bb9937d83b6d3452339f',
+        label: "Topa'z"
+      },
       {
         url: 'https://progate.connpass.com/event/386402/',
         label: 'Connpass'
