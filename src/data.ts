@@ -148,7 +148,7 @@ export const timelineEvents: TimelineEvent[] = [
         label: 'Topa’z'
       }
     ]
-  },
+  }
   {
     year: '2025.January',
     title: 'GeekCamp vol.20 参加',
@@ -168,7 +168,7 @@ export const timelineEvents: TimelineEvent[] = [
     image: 'https://rintarasportfolio.s3.ap-northeast-1.amazonaws.com/TripMate.png'
   },
   {
-    year: '2024.March',
+    year: '2025.March',
     title: 'Progate Hackathon by AWS 2025.03 参加',
     description: 'エンジニアの技術の点に着目したマッチングアプリを開発',
     image: 'https://media.connpass.com/thumbs/4d/d6/4dd6e151c8549e2abe961286531a4b5f.png',
@@ -180,7 +180,7 @@ export const timelineEvents: TimelineEvent[] = [
     ]
   },
   {
-    year: '2024.July',
+    year: '2025.July',
     title: 'Progate Hackathon by AWS 2025.07 参加',
     description: '学習サポート特化型のAIツールを開発',
     image: 'https://media.connpass.com/thumbs/da/65/da65409382a287a699383d33cf3c3419.png',
