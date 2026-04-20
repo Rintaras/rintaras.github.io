@@ -9,6 +9,10 @@ const DEFAULT_EVENT_IMAGE = 'https://via.placeholder.com/200x200/374151/ffffff?t
 const MOTION_DILE_COVER_IMAGE =
   'https://ptera-publish.topaz.dev/project/01KPHVHPFTE8EG67CDP0W1PXVQ.png?v=portfolio202604';
 
+/** タイムライン用（イベント告知サムネ）。Projects カードとは別に Connpass 画像を使う */
+const PROGATE_HACKATHON_2026_04_TIMELINE_IMAGE =
+  'https://media.connpass.com/thumbs/91/16/91161c4216bb5770cdf99197d6847425.png';
+
 export const projects: Project[] = [
   {
     id: 'motion-dile',
@@ -245,7 +249,7 @@ export const timelineEvents: TimelineEvent[] = [
     year: '2026.April',
     title: 'Progate Hackathon by AWS 最終ver 2026.04 優秀賞を受賞',
     description: 'AWS Loft Up Tokyo会場での最終開催のProgate Hackathon by AWSにて「Motion Dile（ワードウルフ3D版）」を開発し優秀賞を受賞',
-    image: MOTION_DILE_COVER_IMAGE,
+    image: PROGATE_HACKATHON_2026_04_TIMELINE_IMAGE,
     links: [
       {
         url: 'https://topaz.dev/projects/bb9937d83b6d3452339f',
