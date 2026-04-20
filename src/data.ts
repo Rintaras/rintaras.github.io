@@ -5,20 +5,22 @@ const DEFAULT_PROJECT_IMAGE = 'https://via.placeholder.com/400x300/1f2937/ffffff
 const DEFAULT_PROFILE_IMAGE = 'https://github.com/github.png';
 const DEFAULT_EVENT_IMAGE = 'https://via.placeholder.com/200x200/374151/ffffff?text=Event';
 
+/** Topa'z 公開元の原画像。`topaz.dev/_next/image` は外部埋め込みでキャッシュ・最適化の差が出やすいため直接 CDN を参照する */
+const MOTION_DILE_COVER_IMAGE =
+  'https://ptera-publish.topaz.dev/project/01KPHVHPFTE8EG67CDP0W1PXVQ.png?v=portfolio202604';
+
 export const projects: Project[] = [
   {
     id: 'motion-dile',
     title: 'Motion Dile（ワードウルフ3D版）',
     description: 'Progate Hackathon by AWS最終開催にて優秀賞を受賞。手でワニを操りながらAIが配った行動ミッションに沿って動く、人狼×モーション操作の新感覚パーティーゲームを開発しました。',
-    image: 'https://media.connpass.com/thumbs/91/16/91161c4216bb5770cdf99197d6847425.png',
+    image: MOTION_DILE_COVER_IMAGE,
     duration: '2026.04',
     role: 'アーキテクチャ設計・3D表現・UI実装',
     technologies: ['Vue', 'Three.js', 'Go', 'Redis', 'AWS', 'Terraform'],
     demoUrl: 'https://motiondile.net/',
     githubUrl: 'https://github.com/NUMaters/WaniAR',
-    screenshots: [
-      'https://media.connpass.com/thumbs/91/16/91161c4216bb5770cdf99197d6847425.png'
-    ]
+    screenshots: [MOTION_DILE_COVER_IMAGE]
   },
   {
     id: 'ai-iot-device',
@@ -243,7 +245,7 @@ export const timelineEvents: TimelineEvent[] = [
     year: '2026.April',
     title: 'Progate Hackathon by AWS 最終ver 2026.04 優秀賞を受賞',
     description: 'AWS Loft Up Tokyo会場での最終開催のProgate Hackathon by AWSにて「Motion Dile（ワードウルフ3D版）」を開発し優秀賞を受賞',
-    image: 'https://media.connpass.com/thumbs/91/16/91161c4216bb5770cdf99197d6847425.png',
+    image: MOTION_DILE_COVER_IMAGE,
     links: [
       {
         url: 'https://topaz.dev/projects/bb9937d83b6d3452339f',

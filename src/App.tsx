@@ -294,8 +294,10 @@ function App() {
                       <div className="aspect-video relative overflow-hidden">
                         {!imageErrors.has(project.id) ? (
                           <img
+                            key={project.image}
                             src={project.image}
                             alt={project.title}
+                            referrerPolicy="no-referrer"
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                             onError={() => {
                               console.warn(`Failed to load project image: ${project.image}`);

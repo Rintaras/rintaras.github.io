@@ -70,8 +70,10 @@ export default function TimelineItem({
         >
           {image && !imageError ? (
             <img
+              key={image}
               src={image}
               alt={title}
+              referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
               onError={() => {
                 console.warn(`Failed to load image: ${image}`);

@@ -57,7 +57,7 @@ MyPortfolio/
 │   │   ├── Layout.tsx          # レイアウト
 │   │   ├── ProfileImage.tsx    # プロフィール画像
 │   │   └── TimelineItem.tsx    # タイムラインアイテム
-│   ├── data.ts              # プロジェクトデータ
+│   ├── data.ts              # プロジェクトデータ（画像は Topa'z の CDN `ptera-publish.topaz.dev` を直接参照する場合あり）
 │   ├── types.ts             # TypeScript型定義
 │   ├── App.tsx              # メインアプリケーション
 │   └── main.tsx             # エントリーポイント
