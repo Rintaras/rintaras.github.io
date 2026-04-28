@@ -87,8 +87,6 @@ export const skills: Skill[] = [
   { name: 'Go', icon: 'code', category: 'language' },
   { name: 'JavaScript', icon: 'code', category: 'language' },
   { name: 'TypeScript', icon: 'code', category: 'language' },
-  { name: 'HTML', icon: 'code', category: 'language' },
-  { name: 'CSS', icon: 'code', category: 'language' },
   { name: 'MySQL', icon: 'code', category: 'language' },
   { name: 'PostgreSQL', icon: 'code', category: 'language' },
   // Frameworks
@@ -97,6 +95,7 @@ export const skills: Skill[] = [
   { name: 'Next.js', icon: 'server', category: 'framework' },
   { name: 'Three.js', icon: 'component', category: 'framework' },
   { name: 'Tailwind CSS', icon: 'component', category: 'framework' },
+  { name: 'Vue', icon: 'component', category: 'framework' },
   { name: 'Django', icon: 'component', category: 'framework' },
   { name: 'Echo', icon: 'component', category: 'framework' },
   { name: 'Gin', icon: 'component', category: 'framework' },
@@ -104,12 +103,13 @@ export const skills: Skill[] = [
 
   // Tools
   { name: 'AWS', icon: 'cloud', category: 'tool' },
+  { name: 'Cloudflare', icon: 'cloud', category: 'tool' },
   { name: 'Docker', icon: 'container', category: 'tool' },
-  { name: 'Git', icon: 'code', category: 'tool' },
-  { name: 'RasberryPi', icon: 'server', category: 'tool' },
+  { name: 'Redis', icon: 'cloud', category: 'tool' },
   { name: 'SupaBase', icon: 'code', category: 'tool' },
   { name: 'Vercel', icon: 'code', category: 'tool' },
-  { name: 'Teraform', icon: 'code', category: 'tool' },
+  { name: 'Terraform', icon: 'code', category: 'tool' },
+
 ];
 
 export const timelineEvents: TimelineEvent[] = [
