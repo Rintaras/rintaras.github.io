@@ -195,7 +195,7 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2026.February ~ March',
-    title: '株式会社CyberAgen(Online)',
+    title: 'CyberAgent, Inc.(Online)',
     description: '同社開催「Go College」にてサーバーサイドの研修を受講し、基本文法からAPI実装、パフォーマンスチューニング等を学びました。',
     image: 'https://www.cyberagent.co.jp/files/topics/32665_ext_03_0.jpg?width=824&height=464&scale=2',
     links: [
@@ -219,7 +219,7 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2026.February ~ March',
-    title: '株式会社CyberAgent(Offline)',
+    title: 'CyberAgent, Inc.(Offline)',
     description: '同社開催「Go College」にて仕様書からAPI実装、リアーキテクチャ設計、ボトルネックの解消を行いました。',
     image: 'https://www.cyberagent.co.jp/files/topics/32665_ext_03_0.jpg?width=824&height=464&scale=2',
     links: [
@@ -265,8 +265,8 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2026.June ~',
-    title: '株式会社CyberAgent',
-    description: 'CA Tech Jobへ現在参加中',
+    title: 'CyberAgent, Inc.',
+    description: 'CA Tech Jobにてサーバーサイドエンジニアとして就業中',
     image: 'https://img.neirong.plus/o/44/16/441606706a6511efb2bf7515a302c126.png',
     links: [
       {
@@ -277,7 +277,7 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2026.June ~',
-    title: '株式会社SCIEN',
+    title: 'SCIEN, Inc.',
     description: '東大 松尾研発AIスタートアップにて長期インターン',
     image: 'https://pbs.twimg.com/profile_images/1894733318588858368/4XN-6jYz_400x400.jpg',
     links: [
