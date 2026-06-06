@@ -286,5 +286,29 @@ export const timelineEvents: TimelineEvent[] = [
         label: '公式サイト'
       }
     ],
+  },
+  {
+    year: '2026.July',
+    title: '3-shake Inc.',
+    description: 'SREワークショップへ参加予定',
+    image: 'https://3-shake.com/wp-content/uploads/2020/01/20200124_OGP.jpg',
+    links: [
+      {
+        url: 'https://3-shake.com/',
+        label: '公式サイト'
+      }
+    ],
+  },
+  {
+    year: '2026.August',
+    title: 'MEDIA DO Co., Ltd.',
+    description: '電子書籍の配信・管理を支えるシステムのパフォーマンス改善に関するインターンへ参加予定',
+    image: 'https://mediado.jp/wp-content/themes/basic-theme/img/common/logo_ogp.png',
+    links: [
+      {
+        url: 'https://mediado.jp/',
+        label: '公式サイト'
+      }
+    ],
   }
 ];
