@@ -268,11 +268,23 @@ export const timelineEvents: TimelineEvent[] = [
     title: '株式会社CyberAgent',
     description: 'CA Tech Jobへ現在参加中',
     image: 'https://img.neirong.plus/o/44/16/441606706a6511efb2bf7515a302c126.png',
+    links: [
+      {
+        url: 'https://www.cyberagent.co.jp/careers/students/event/detail/id=32004',
+        label: '公式サイト'
+      }
+    ],
   },
   {
     year: '2026.June ~',
     title: '株式会社SCIEN',
     description: '東大 松尾研発AIスタートアップにて長期インターン',
     image: 'https://pbs.twimg.com/profile_images/1894733318588858368/4XN-6jYz_400x400.jpg',
+    links: [
+      {
+        url: 'https://scieninc.jp/',
+        label: '公式サイト'
+      }
+    ],
   }
 ];
