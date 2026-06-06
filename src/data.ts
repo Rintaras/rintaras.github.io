@@ -200,8 +200,8 @@ export const timelineEvents: TimelineEvent[] = [
     image: 'https://img.neirong.plus/o/44/16/441606706a6511efb2bf7515a302c126.png',
     links: [
       {
-        url: 'https://www.cyberagent.co.jp/careers/students/event/detail/id=32665',
-        label: '公式サイト'
+        url: 'https://note.com/ca_tech/n/n273b9a2f8055',
+        label: '公式レポート'
       }
     ]
   },
@@ -224,8 +224,8 @@ export const timelineEvents: TimelineEvent[] = [
     image: 'https://img.neirong.plus/o/44/16/441606706a6511efb2bf7515a302c126.png',
     links: [
       {
-        url: 'https://www.cyberagent.co.jp/careers/students/event/detail/id=32665',
-        label: '公式サイト'
+        url: 'https://note.com/ca_tech/n/n273b9a2f8055',
+        label: '公式レポート'
       }
     ]
   },
