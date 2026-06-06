@@ -6,6 +6,12 @@ import glsl from 'vite-plugin-glsl';
 export default defineConfig({
   base: './',
   plugins: [react(), glsl()],
+  optimizeDeps: {
+    include: ['three', '@react-three/fiber', '@react-three/drei', 'react', 'react-dom'],
+    esbuildOptions: {
+      target: 'esnext',
+    },
+  },
   server: {
     port: 5173,
     host: '127.0.0.1',

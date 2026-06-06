@@ -265,7 +265,7 @@ export const timelineEvents: TimelineEvent[] = [
     year: '2026.June ~',
     title: '株式会社CyberAgent',
     description: 'CA Tech Jobへ現在参加中',
-    image: 'image.png',
+    image: 'https://img.neirong.plus/o/44/16/441606706a6511efb2bf7515a302c126.png',
   },
   {
     year: '2026.June ~',
