@@ -117,7 +117,7 @@ export const skills: Skill[] = [
 export const timelineEvents: TimelineEvent[] = [
   {
     year: '2022.April',
-    title: '日本大学 入学',
+    title: '日本大学',
     description: '工学部情報工学科に入学',
     image: 'https://pbs.twimg.com/profile_images/923458947612229632/SnABWuYV_400x400.jpg',
     links: [
@@ -129,7 +129,7 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2024.October',
-    title: 'Mat Tech加入',
+    title: 'MaTech',
     description: '学生エンジニア団体に加入する',
     image: 'https://dfs38zlnglmbd.cloudfront.net/assets/logo-520fec39.png',
     links: [
@@ -141,7 +141,7 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2024.December',
-    title: 'Progate Hackathon by AWS 2024.12 入賞',
+    title: 'Progate Hackathon by AWS 2024.12 企業賞',
     description: 'ハッカソン初参加。AI搭載IoTデバイスを開発し企業賞を受賞',
     image: 'https://media.connpass.com/thumbs/89/30/893061def50d6db3b0b799171d78e678.png',
     links: [
@@ -153,7 +153,7 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2025.January',
-    title: 'GeekCamp vol.20 参加',
+    title: 'GeekCamp Hackathon vol.20',
     description: 'エンジニア交流アプリ「Map Chat」を開発',
     image: 'https://ferret-one.akamaized.net/images/6657f0fb5e4a0902870bf090/original.png?utime=1717039355',
     links: [
@@ -165,13 +165,13 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2025.February',
-    title: '学内コンテスト 最優秀賞受賞',
+    title: '学内コンテスト 最優秀賞',
     description: '大学内ソフトウェアコンテストにて「TripMate」を開発し最優秀賞を受賞\n旅行に関する情報管理をAIによって最適化し、旅行計画を立てることができるアプリを開発しました。',
     image: 'https://rintarasportfolio.s3.ap-northeast-1.amazonaws.com/TripMate.png'
   },
   {
     year: '2025.March',
-    title: 'Progate Hackathon by AWS 2025.03 参加',
+    title: 'Progate Hackathon by AWS 2025.03',
     description: 'エンジニアの技術の点に着目したマッチングアプリを開発',
     image: 'https://media.connpass.com/thumbs/4d/d6/4dd6e151c8549e2abe961286531a4b5f.png',
     links: [
@@ -183,7 +183,7 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2025.July',
-    title: 'Progate Hackathon by AWS 2025.07 参加',
+    title: 'Progate Hackathon by AWS 2025.07',
     description: '学習サポート特化型のAIツールを開発',
     image: 'https://media.connpass.com/thumbs/da/65/da65409382a287a699383d33cf3c3419.png',
     links: [
@@ -207,7 +207,7 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2026.February',
-    title: '学内コンテスト 最優秀賞受賞',
+    title: '学内コンテスト 最優秀賞',
     description: '大学内ソフトウェアコンテストにて「NU App」を開発し最優秀賞を受賞。\n同大学のポータルサイトをより良く多機能にアップデートし、ios/android対応のネイティブアプリ開発を行いました。',
     image: 'https://pbs.twimg.com/media/HBkjGQ8bUAIBvw1?format=jpg&name=large',
     links: [
@@ -231,8 +231,8 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2026.March',
-    title: 'Findy Campus Hackathon 2026.03 企業賞を受賞',
-    description: 'エントリーエンジニア向けプラットフォーム「Hack Splinter」を開発し企業賞を受賞',
+    title: 'Findy Campus Hackathon 2026.03 企業賞',
+    description: 'エントリーエンジニア向けプラットフォーム「Hack Splinter」を開発し企業賞',
     image: 'https://directs.xsrv.jp/wp-content/uploads/2025/07/Findy.png',
     links: [
       {
@@ -243,13 +243,13 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     year: '2026.April',
-    title: '日本大学大学院 工学研究科　情報工学専攻　修士課程入学',
-    description: 'ネットワーク分野にて研究の継続',
+    title: '日本大学大学院',
+    description: ' 工学研究科　情報工学専攻　修士課程入学。ネットワーク分野にて研究を継続',
     image: 'https://www.ce.nihon-u.ac.jp/nue/wp-content/uploads/2025/09/news_thumbnail.jpg',
   },
   {
     year: '2026.April',
-    title: 'Progate Hackathon by AWS 最終ver 2026.04 優秀賞を受賞',
+    title: 'Progate Hackathon by AWS 最終ver 2026.04 優秀賞',
     description: 'AWS Loft Up Tokyo会場での最終開催のProgate Hackathon by AWSにて「Motion Dile（ワードウルフ3D版）」を開発し優秀賞を受賞',
     image: PROGATE_HACKATHON_2026_04_TIMELINE_IMAGE,
     links: [
