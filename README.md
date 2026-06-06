@@ -75,6 +75,7 @@ MyPortfolio/
 ### 📱 レスポンシブデザイン
 - モバイルファーストのデザイン
 - Tailwind CSSによるレスポンシブレイアウト
+- iOS/Android向け `viewport-fit=cover`、`theme-color`、`safe-area-inset` 対応（上下の白余白防止）
 
 ### 🎭 アニメーション
 - Framer Motionによるスムーズなアニメーション

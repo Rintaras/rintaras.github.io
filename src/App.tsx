@@ -81,8 +81,8 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#030303] text-gray-100 relative overflow-hidden">
-      <nav className={`fixed top-0 left-0 right-0 bg-black/40 backdrop-blur-md z-50 border-b border-white/10 transition-all duration-300 ${isNavVisible ? 'translate-y-0' : '-translate-y-full'
+    <div className="min-h-dvh min-h-[100dvh] bg-[#030303] text-gray-100 relative overflow-hidden">
+      <nav className={`fixed top-0 left-0 right-0 bg-black/40 backdrop-blur-md z-50 border-b border-white/10 transition-all duration-300 pt-[env(safe-area-inset-top)] ${isNavVisible ? 'translate-y-0' : '-translate-y-full'
         }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
@@ -123,7 +123,7 @@ function App() {
       </nav>
 
       {/* 軽量化のためのCSSバックグラウンド */}
-      <div className="fixed inset-0 -z-10 bg-[#050505]">
+      <div className="fixed -z-10 bg-[#050505] top-[calc(-1*env(safe-area-inset-top))] bottom-[calc(-1*env(safe-area-inset-bottom))] left-[calc(-1*env(safe-area-inset-left))] right-[calc(-1*env(safe-area-inset-right))]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,transparent_120%)]" />
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
@@ -133,7 +133,7 @@ function App() {
       </div>
 
       <Leva hidden={true} />
-      <div className="fixed inset-0 -z-5 pointer-events-none opacity-60">
+      <div className="fixed -z-5 pointer-events-none opacity-60 top-[calc(-1*env(safe-area-inset-top))] bottom-[calc(-1*env(safe-area-inset-bottom))] left-[calc(-1*env(safe-area-inset-left))] right-[calc(-1*env(safe-area-inset-right))]">
         <Canvas camera={{ position: [0, 2, 8], fov: 60 }} dpr={[1, 1]} gl={{ powerPreference: "high-performance", antialias: false }}>
           <Suspense fallback={null}>
             <ambientLight intensity={0.5} />
@@ -144,7 +144,7 @@ function App() {
         </Canvas>
       </div>
 
-      <main ref={mainRef} className="relative pt-24">
+      <main ref={mainRef} className="relative pt-24 pb-[env(safe-area-inset-bottom)]">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
