@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { PROFILE_IMAGE } from '../data';
 
 interface ProfileImageProps {
   className?: string;
@@ -8,10 +9,7 @@ interface ProfileImageProps {
 export default function ProfileImage({ className = '' }: ProfileImageProps) {
   const [imageError, setImageError] = useState(false);
 
-  // デフォルトのプロフィール画像URL（GitHubのデフォルトアバターを使用）
-  const imageUrl = imageError
-    ? 'https://github.com/github.png'
-    : 'https://rintarasportfolio.s3.ap-northeast-1.amazonaws.com/S__67723271_0.jpg';
+  const imageUrl = imageError ? 'https://github.com/github.png' : PROFILE_IMAGE;
 
   return (
     <div className={`relative ${className}`}>
@@ -25,7 +23,7 @@ export default function ProfileImage({ className = '' }: ProfileImageProps) {
           <img
             src={imageUrl}
             alt="Profile"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-[35%_center]"
             onError={() => {
               console.warn(`Failed to load profile image: ${imageUrl}`);
               setImageError(true);

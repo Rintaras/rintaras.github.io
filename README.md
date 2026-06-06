@@ -57,7 +57,7 @@ MyPortfolio/
 │   │   ├── Layout.tsx          # レイアウト
 │   │   ├── ProfileImage.tsx    # プロフィール画像
 │   │   └── TimelineItem.tsx    # タイムラインアイテム
-│   ├── data.ts              # プロジェクトデータ（Projects は Topa'z CDN、タイムラインの一部は Connpass 等のイベント画像を併用する場合あり）
+│   ├── data.ts              # プロジェクトデータ・プロフィール画像URL（`PROFILE_IMAGE`、S3 ホスト）。Projects は Topa'z CDN、タイムラインの一部は Connpass 等のイベント画像を併用する場合あり
 │   ├── types.ts             # TypeScript型定義
 │   ├── App.tsx              # メインアプリケーション
 │   └── main.tsx             # エントリーポイント
