@@ -119,7 +119,7 @@ export const timelineEvents: TimelineEvent[] = [
     year: '2022.April',
     title: '日本大学',
     description: '工学部情報工学科に入学',
-    image: 'https://pbs.twimg.com/profile_images/923458947612229632/SnABWuYV_400x400.jpg',
+    image: 'https://www.ce.nihon-u.ac.jp/nue/wp-content/uploads/2025/09/news_thumbnail.jpg',
     links: [
       {
         url: 'https://www.ce.nihon-u.ac.jp/computer-science/',
@@ -197,7 +197,7 @@ export const timelineEvents: TimelineEvent[] = [
     year: '2026.February ~ March',
     title: 'CyberAgent, Inc.(Online)',
     description: '同社開催「Go College」にてサーバーサイドの研修を受講し、基本文法からAPI実装、パフォーマンスチューニング等を学びました。',
-    image: 'https://www.cyberagent.co.jp/files/topics/32665_ext_03_0.jpg?width=824&height=464&scale=2',
+    image: 'https://img.neirong.plus/o/44/16/441606706a6511efb2bf7515a302c126.png',
     links: [
       {
         url: 'https://www.cyberagent.co.jp/careers/students/event/detail/id=32665',
@@ -221,7 +221,7 @@ export const timelineEvents: TimelineEvent[] = [
     year: '2026.February ~ March',
     title: 'CyberAgent, Inc.(Offline)',
     description: '同社開催「Go College」にて仕様書からAPI実装、リアーキテクチャ設計、ボトルネックの解消を行いました。',
-    image: 'https://www.cyberagent.co.jp/files/topics/32665_ext_03_0.jpg?width=824&height=464&scale=2',
+    image: 'https://img.neirong.plus/o/44/16/441606706a6511efb2bf7515a302c126.png',
     links: [
       {
         url: 'https://www.cyberagent.co.jp/careers/students/event/detail/id=32665',
