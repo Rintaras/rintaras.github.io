@@ -291,7 +291,7 @@ export const timelineEvents: TimelineEvent[] = [
     year: '2026.July',
     title: '3-shake Inc.',
     description: 'SREワークショップへ参加予定',
-    image: 'https://3-shake.com/wp-content/uploads/2020/01/20200124_OGP.jpg',
+    image: 'https://d2v9k5u4v94ulw.cloudfront.net/assets/images/5076589/original/a8f69e0b-b288-47a2-b3e2-59b059ef3c53?1590468986',
     links: [
       {
         url: 'https://3-shake.com/',
