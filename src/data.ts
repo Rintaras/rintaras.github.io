@@ -271,6 +271,6 @@ export const timelineEvents: TimelineEvent[] = [
     year: '2026.June ~',
     title: '株式会社SCIEN',
     description: '東大 松尾研発AIスタートアップにて長期インターン',
-    image: 'https://d2v9k5u4v94ulw.cloudfront.net/assets/images/20704127/original/cd145185-d8df-4d90-b37d-67b0ad9dd673?1742493600',
+    image: 'https://pbs.twimg.com/profile_images/1894733318588858368/4XN-6jYz_400x400.jpg',
   }
 ];
