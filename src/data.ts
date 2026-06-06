@@ -230,10 +230,10 @@ export const timelineEvents: TimelineEvent[] = [
     ]
   },
   {
-    year: '2026.March ~',
+    year: '2026.March',
     title: 'Findy Campus Hackathon 2026.03 企業賞を受賞',
     description: 'エントリーエンジニア向けプラットフォーム「Hack Splinter」を開発し企業賞を受賞',
-    image: 'https://media.connpass.com/thumbs/00/07/000776a77242b71f0cc3730b59a7fb1d.png',
+    image: 'https://directs.xsrv.jp/wp-content/uploads/2025/07/Findy.png',
     links: [
       {
         url: 'https://x.com/ayamakkie/status/2034962401490346375?s=20',
