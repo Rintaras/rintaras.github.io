@@ -57,7 +57,7 @@ export default function TimelineItem({
     >
       {/* Vertical connecting line */}
       <motion.div
-        className="absolute left-[2.5rem] top-0 w-px bg-white/20 origin-top"
+        className="absolute left-[2rem] top-0 w-px bg-white/20 origin-top"
         style={{ height: lineHeight }}
       />
 
@@ -66,7 +66,7 @@ export default function TimelineItem({
           initial={{ scale: 0, opacity: 0 }}
           animate={inView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
           transition={{ duration: 0.5, delay: index * 0.2 }}
-          className="w-20 h-20 rounded-full bg-[#111] border-2 border-white/20 flex items-center justify-center text-white overflow-hidden shadow-lg"
+          className="w-16 h-16 rounded-full bg-[#111] border-2 border-white/20 flex items-center justify-center text-white overflow-hidden shadow-lg"
         >
           {image && !imageError ? (
             <img
@@ -74,7 +74,7 @@ export default function TimelineItem({
               src={image}
               alt={title}
               referrerPolicy="no-referrer"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain p-2"
               onError={() => {
                 console.warn(`Failed to load image: ${image}`);
                 setImageError(true);
