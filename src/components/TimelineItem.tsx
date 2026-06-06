@@ -53,11 +53,11 @@ export default function TimelineItem({
     <motion.div
       ref={itemRef}
       className="flex gap-8 items-start pl-4 relative"
-      style={{ transform: `scale(${scale})`, opacity }}
+      style={{ opacity }}
     >
       {/* Vertical connecting line */}
       <motion.div
-        className="absolute left-[2rem] top-0 w-px bg-white/20 origin-top"
+        className="absolute left-[3.5rem] top-0 w-px bg-white/20 origin-top"
         style={{ height: lineHeight }}
       />
 
@@ -66,7 +66,7 @@ export default function TimelineItem({
           initial={{ scale: 0, opacity: 0 }}
           animate={inView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
           transition={{ duration: 0.5, delay: index * 0.2 }}
-          className="w-16 h-16 rounded-full bg-[#111] border-2 border-white/20 flex items-center justify-center text-white overflow-hidden shadow-lg"
+          className="w-20 h-20 rounded-full bg-[#111] border-2 border-white/20 flex items-center justify-center text-white overflow-hidden shadow-lg"
         >
           {image && !imageError ? (
             <img
@@ -74,7 +74,7 @@ export default function TimelineItem({
               src={image}
               alt={title}
               referrerPolicy="no-referrer"
-              className="w-full h-full object-contain p-2"
+              className="w-full h-full object-cover"
               onError={() => {
                 console.warn(`Failed to load image: ${image}`);
                 setImageError(true);
@@ -94,6 +94,7 @@ export default function TimelineItem({
         animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
         transition={{ duration: 0.5, delay: index * 0.2 }}
         className="flex-1 pt-4"
+        style={{ transform: `scale(${scale})` }}
       >
         <motion.div
           whileHover={{ y: -5 }}
