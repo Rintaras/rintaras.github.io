@@ -342,7 +342,7 @@ export const timelineEvents: TimelineEvent[] = [
   {
     year: '2026.September',
     title: 'GMO Media, Inc.',
-    description: '教育プラットフォームの講座作成支援に向けたAI機能の検討に参加。自然文の指示を既存の講座データへ反映する設計や、生成の進捗表示・内容の正確性について検討しました。',
+    description: '教育プラットフォームの講座作成支援に向けたAI機能の検討に参加しました。自然文の指示を既存の講座データへ反映する設計や、生成の進捗表示・内容の正確性について検討しました。',
     image: 'https://www.gmo.media/wp-content/uploads/2023/12/logo-header-gmom.png',
     links: [
       {
