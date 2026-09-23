@@ -338,5 +338,17 @@ export const timelineEvents: TimelineEvent[] = [
         label: '公式サイト'
       }
     ],
+  },
+  {
+    year: '2026.September',
+    title: 'GMO Media, Inc.',
+    description: 'AIを活用した講座作成支援機能の検討に参加。自然文の指示を既存の講座データへ反映する設計を考え、生成内容の正確性や進捗表示などの課題を整理しました。',
+    image: 'https://www.gmo.media/wp-content/uploads/2023/12/logo-header-gmom.png',
+    links: [
+      {
+        url: 'https://www.gmo.media/',
+        label: '公式サイト'
+      }
+    ],
   }
 ];
