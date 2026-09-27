@@ -25,7 +25,7 @@ Rio Satoのポートフォリオサイトです。React、TypeScript、Three.js�
 ### PWA（Progressive Web App）
 - **vite-plugin-pwa** - Web App Manifest / Service Worker
 - **Workbox** - 静的アセットのキャッシュ
-- **Sharp** - インストール用アイコン（192 / 512 / Apple Touch）の生成
+- **Sharp** - インストール用アイコン（192 / 512 / Apple Touch）の生成（`PROFILE_IMAGE` と同じ S3 プロフィール写真）
 
 本番: [https://rintaras.net/](https://rintaras.net/)
 
