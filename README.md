@@ -22,6 +22,13 @@ Rio Satoのポートフォリオサイトです。React、TypeScript、Three.js�
 - **EmailJS** - お問い合わせフォーム
 - **React Intersection Observer** - スクロールアニメーション
 
+### PWA（Progressive Web App）
+- **vite-plugin-pwa** - Web App Manifest / Service Worker
+- **Workbox** - 静的アセットのキャッシュ
+- **Sharp** - インストール用アイコン（192 / 512 / Apple Touch）の生成
+
+本番: [https://rintaras.net/](https://rintaras.net/)
+
 ## 🛠️ セットアップ
 
 ### 前提条件
@@ -44,6 +51,9 @@ npm run build
 
 # プレビュー
 npm run preview
+
+# PWAアイコン再生成
+npm run generate-icons
 ```
 
 ## 📁 プロジェクト構造
@@ -90,6 +100,11 @@ MyPortfolio/
 - 画像読み込みエラーの自動検出
 - フォールバック画像の表示
 - プログレッシブ画像読み込み
+
+### 📲 PWA
+- ホーム画面への追加（スタンドアロン表示）
+- Service Worker による静的アセットのオフラインキャッシュ
+- `theme-color` / `viewport-fit=cover` によるモバイル表示の最適化
 
 ## 🔧 開発
 
